@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+    <button onclick="saveReq()">글작성</button>
+    <button onclick="listReq()">글목록</button>
+</body>
+<script>
+//    function saveReq() { // 과거에 많이 쓰인 방법
+//
+//    }
+
+    const saveReq = () => {
+        location.href = "/board/save";
+    }
+
+    const listReq = () => {
+        location.href = "/board/";
+    }
+
+</script>
+</html>
