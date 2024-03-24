@@ -7,6 +7,7 @@
 <body>
     <button onclick="saveReq()">글작성</button>
     <button onclick="listReq()">글목록</button>
+    <button onclick="pagingReq()">페이징목록</button>
 </body>
 <script>
 //    function saveReq() { // 과거에 많이 쓰인 방법
@@ -21,5 +22,8 @@
         location.href = "/board/";
     }
 
+    const pagingReq = () => {
+        location.href = "/board/paging";
+    }
 </script>
 </html>
