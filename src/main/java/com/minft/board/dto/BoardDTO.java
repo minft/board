@@ -44,6 +44,16 @@ public class BoardDTO {
         boardDTO.setBoardHits(boardEntity.getBoardHits());
         boardDTO.setBoardCreatedTime(boardEntity.getCreatedTime());
         boardDTO.setBoardUpdatedTime(boardEntity.getUpdatedTime());
+        if (boardEntity.getFileAttached() == 0) {
+            boardDTO.setFileAttached(boardEntity.getFileAttached()); // 0
+        } else {
+            boardDTO.setFileAttached(boardEntity.getFileAttached()); // 1
+            // board_file_table(BoardFileEntity)에 있는 originalFileName, storedFileName이 필요함
+            // select * from board_table b, board_file_table bf where b.id=bf.board.id and where b.id=?
+            boardDTO.setOriginalFileName(boardEntity.getBoardFileEntityList().get(0).getOriginalFileName()); // 첨부파일 1개기 때문에 0을 줬음
+            boardDTO.setStoredFileName(boardEntity.getBoardFileEntityList().get(0).getStoredFileName());
+        }
+
         return boardDTO;
     }
 
