@@ -30,10 +30,10 @@
         <th>contents</th>
         <td th:text="${board.boardContents}"></td>
     </tr>
-    <tr th:if="{board.fileAttached == 1">
+    <tr th:if="${board.fileAttached == 1}">
         <th>image</th>
-        <td th:each="fileName: ${board.storedFileName">
-            <img th:src="{|/upload/${fileName}|}" alt="">
+        <td th:each="fileName: ${board.storedFileName}">
+            <img th:src="@{|/upload/${fileName}|}" alt="">
         </td>
     </tr>
 </table>

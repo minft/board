@@ -48,7 +48,7 @@ public class BoardDTO {
         boardDTO.setBoardCreatedTime(boardEntity.getCreatedTime());
         boardDTO.setBoardUpdatedTime(boardEntity.getUpdatedTime());
         if (boardEntity.getFileAttached() == 0) {
-            boardDTO.setFileAttached(boardEntity.getFileAttached()); // 0
+            boardDTO.setFileAttached(0); // 0
         } else {
             List<String> originalFileNameList = new ArrayList<>();
             List<String> storedFileNameList = new ArrayList<>();
@@ -62,8 +62,10 @@ public class BoardDTO {
             boardDTO.setOriginalFileName(originalFileNameList);
             boardDTO.setStoredFileName(storedFileNameList);
         }
-
         return boardDTO;
     }
 
 }
+
+// TODO: 2024-03-25, 글 detail 조회 시 "board.fileAttache == 1" 에러 나는 것 확인해야함.
+// 2024-03-26, 확인 후 코드 수정 완료
