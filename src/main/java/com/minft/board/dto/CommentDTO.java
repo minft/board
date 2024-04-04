@@ -19,7 +19,7 @@ public class CommentDTO {
 
     public static CommentDTO toCommentDTO(CommentEntity commentEntity, Long boardId) {
         CommentDTO commentDTO = new CommentDTO();
-        commentDTO.setId(commentDTO.getId());
+        commentDTO.setId(commentEntity.getId());
         commentDTO.setCommentWriter(commentEntity.getCommentWriter());
         commentDTO.setCommentContents(commentEntity.getCommentContents());
         commentDTO.setCommentCreatedTime(commentEntity.getCreatedTime());
